@@ -1,7 +1,7 @@
-# Einlesen der .csv-Datei  Auto mit Ausgabe der ersten 10 Zeilen
+# Einlesen der .csv-Datei Auto mit Ausgabe der ersten 10 Zeilen
 import pandas as pd
 
-file = pd.read_csv("Auto.csv", sep=";", decimal=",")
+file = pd.read_csv("Datasets/Auto.csv", sep=";", decimal=",")
 print(file.head(10))
 
 # Abfrage Datentypen der Spalten
