@@ -1,9 +1,7 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
-import seaborn as sns
 
-file = pd.read_csv("DataSets/Auto.csv", sep=";", decimal=",")
+file = pd.read_csv("Dataset/Auto.csv", sep=";", decimal=",")
 print(file.head(10))
 
 # Abfrage Datentypen der Spalten
@@ -43,24 +41,13 @@ print(file.describe().round(2))
 print(file.dtypes)
 
 # Histogramm
-# file["displacement"].plot(kind="hist", color="blue")
+file["displacement"].plot(kind="hist", color="blue")
 # Beschriftung des Histogramms
-# plt.title("Histogramm von Displacement")
-# plt.xlabel("Klassen")
-# plt.ylabel("Höhe")
-# plt.show()
+plt.title("Histogramm von Displacement")
+plt.xlabel("Klassen")
+plt.ylabel("Höhe")
+plt.show()
 
 # Boxplot
-# file[["mpg","acceleration"]].plot(kind="box", showfliers= True)
-# plt.show()
-
-# Visualisierung der Punktwolken
-# sns.pairplot(file)
-# plt.show()
-
-# Berechnung der Korrelation
-print(file.corr().round(2))
-
-# Visualisierung der Korrelationsmatrix
-corr = sns.heatmap(file.corr(), mask=np.triu(file.corr(), k=1))
+file[["mpg", "acceleration"]].plot(kind="box", showfliers=True)
 plt.show()
